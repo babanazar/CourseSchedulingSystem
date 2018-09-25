@@ -326,7 +326,21 @@
                     alert('Subject required');
                     return;
                 }
+                
+                if ($('#courseDuration').val() > 60) {
+                    alert('Duration cannot be more than 60 minutes');
+                    return;
+                }
 
+                if ($('#courseDuration').val() <= 0) {
+                    alert('Duration cannot be less than 0 minute');
+                    return;
+                }
+
+                if ($('#courseFrequencyInput').val() <= 0) {
+                    alert('Course frequency must be greater than 0');
+                    return;
+                }
 
                 /*
                 if ($('#txtStart').val().trim() == "") {
@@ -527,7 +541,7 @@
         }
 
         .fc-center h2::after {
-            content: "My schedule";
+            content: "My Schedule";
             visibility: visible;
         }
 
